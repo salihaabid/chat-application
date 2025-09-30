@@ -5,25 +5,9 @@ import { useChatStore } from '../store/useChatStore';
 import MessageSkeleton from './skeletons/MessageSkeleton';
 import { formatMessageTime } from '../lib/utils';
 import { useAuthStore } from '../store/useAuthStore';
+import noUserImg from '../assets/avatar.png';
 
 export default function ChatSelected() {
-  // const { messages, getMessages, isMessagesLoading, selectedUser } =
-  //   useChatStore();
-  // const { authUser } = useAuthStore();
-  // const messageEndRef = useRef(null);
-  // useEffect(() => {
-  //   getMessages(selectedUser._id);
-  // }, [selectedUser._id, getMessages]);
-
-  // if (isMessagesLoading) {
-  //   return (
-  //     <div className='flex-1 flex flex-col overflow-auto'>
-  //       <ChatHeader />
-  //       <MessageSkeleton />
-  //       <MessageInput />
-  //     </div>
-  //   );
-  // }
   const {
     messages,
     getMessages,
@@ -80,8 +64,8 @@ export default function ChatSelected() {
                 <img
                   src={
                     message.senderId === authUser._id
-                      ? authUser.profilePic || '/avatar.png'
-                      : selectedUser.profilePic || '/avatar.png'
+                      ? authUser.profilePic || noUserImg
+                      : selectedUser.profilePic || noUserImg
                   }
                   alt='profile pic'
                 />
