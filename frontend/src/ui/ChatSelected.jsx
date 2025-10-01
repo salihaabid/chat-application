@@ -5,7 +5,7 @@ import { useChatStore } from '../store/useChatStore';
 import MessageSkeleton from './skeletons/MessageSkeleton';
 import { formatMessageTime } from '../lib/utils';
 import { useAuthStore } from '../store/useAuthStore';
-import noUserImg from '../assets/avatar.png';
+import noUserimg from '../assets/avatar.png';
 
 export default function ChatSelected() {
   const {
@@ -64,8 +64,8 @@ export default function ChatSelected() {
                 <img
                   src={
                     message.senderId === authUser._id
-                      ? authUser.profilePic || noUserImg
-                      : selectedUser.profilePic || noUserImg
+                      ? authUser.profilePic || noUserimg
+                      : selectedUser.profilePic || noUserimg
                   }
                   alt='profile pic'
                 />
